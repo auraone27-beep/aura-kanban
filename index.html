@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>✨ Aura Kanban</h1>
+        <button id="addCardBtn">+ Add Card</button>
+    </header>
+    <main class="board">
+        <div class="column" data-status="backlog">
+            <h2>Backlog</h2>
+            <div class="cards" data-status="backlog"></div>
+        </div>
+        <div class="column" data-status="progress">
+            <h2>In Progress</h2>
+            <div class="cards" data-status="progress"></div>
+        </div>
+        <div class="column" data-status="review">
+            <h2>Review</h2>
+            <div class="cards" data-status="review"></div>
+        </div>
+        <div class="column" data-status="done">
+            <h2>Done</h2>
+            <div class="cards" data-status="done"></div>
+        </div>
+    </main>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modalTitle">Add Card</h3>
+            <input type="text" id="cardTitle" placeholder="Card title">
+            <textarea id="cardDesc" placeholder="Description (optional)"></textarea>
+            <div class="modal-actions">
+                <button id="saveCard">Save</button>
+                <button id="deleteCard" class="danger hidden">Delete</button>
+                <button id="cancelCard">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
