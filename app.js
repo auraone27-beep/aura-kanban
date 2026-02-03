@@ -39,9 +39,9 @@ const defaultCards = [
         id: '1738566000005',
         title: 'Upgrade Kanban to Project Hub',
         desc: 'Add stats, activity log, categories, usage tracking.',
-        status: 'progress',
+        status: 'done',
         category: 'build',
-        completedAt: null
+        completedAt: '2026-02-02T23:31:00'
     },
     {
         id: '1738566000006',
@@ -49,7 +49,7 @@ const defaultCards = [
         desc: 'Brandon mentioned this as a future project.',
         status: 'backlog',
         category: 'aurapath',
-        completedAt: null
+        completedAt: '2026-02-02T23:31:00'
     },
     {
         id: '1738566000007',
@@ -57,7 +57,7 @@ const defaultCards = [
         desc: 'Brandon mentioned this as a future project.',
         status: 'backlog',
         category: 'aurapath',
-        completedAt: null
+        completedAt: '2026-02-02T23:31:00'
     },
     {
         id: '1738566000008',
@@ -65,7 +65,7 @@ const defaultCards = [
         desc: 'Brandon\'s business partner at Aurapath AI.',
         status: 'backlog',
         category: 'other',
-        completedAt: null
+        completedAt: '2026-02-02T23:31:00'
     }
 ];
 
@@ -200,7 +200,7 @@ $('#saveCard').onclick = () => {
             desc: $('#cardDesc').value.trim(),
             status: 'backlog',
             category: $('#cardCategory').value,
-            completedAt: null
+            completedAt: '2026-02-02T23:31:00'
         });
         addActivity(`Added: ${title}`);
     }
