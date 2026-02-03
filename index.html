@@ -3,37 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura Kanban</title>
+    <title>Aura + Brandon | Project Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>✨ Aura Kanban</h1>
-        <button id="addCardBtn">+ Add Card</button>
+        <div class="header-left">
+            <h1>✨ Aura + Brandon</h1>
+            <span class="subtitle">Project Hub</span>
+        </div>
+        <div class="header-right">
+            <div class="stats" id="stats"></div>
+            <button id="addCardBtn">+ Add Task</button>
+        </div>
     </header>
-    <main class="board">
-        <div class="column" data-status="backlog">
-            <h2>Backlog</h2>
-            <div class="cards" data-status="backlog"></div>
-        </div>
-        <div class="column" data-status="progress">
-            <h2>In Progress</h2>
-            <div class="cards" data-status="progress"></div>
-        </div>
-        <div class="column" data-status="review">
-            <h2>Review</h2>
-            <div class="cards" data-status="review"></div>
-        </div>
-        <div class="column" data-status="done">
-            <h2>Done</h2>
-            <div class="cards" data-status="done"></div>
-        </div>
-    </main>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <div class="stats-panel">
+                <h3>📊 Stats</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Tasks Completed</span>
+                    <span class="stat-value" id="completedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">In Progress</span>
+                    <span class="stat-value" id="progressCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Partnership Started</span>
+                    <span class="stat-value" id="startDate">Feb 2, 2026</span>
+                </div>
+            </div>
+            
+            <div class="usage-panel">
+                <h3>🧠 Model Usage</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Model</span>
+                    <span class="stat-value small">Claude Opus 4.5</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Context</span>
+                    <span class="stat-value" id="contextUsage">—</span>
+                </div>
+                <div class="usage-note">Updated via session</div>
+            </div>
+
+            <div class="history-panel">
+                <h3>📜 Recent Activity</h3>
+                <div id="activityLog"></div>
+            </div>
+        </aside>
+
+        <main class="board">
+            <div class="column" data-status="backlog">
+                <h2>📋 Backlog</h2>
+                <div class="cards" data-status="backlog"></div>
+            </div>
+            <div class="column" data-status="progress">
+                <h2>🔨 In Progress</h2>
+                <div class="cards" data-status="progress"></div>
+            </div>
+            <div class="column" data-status="review">
+                <h2>👀 Review</h2>
+                <div class="cards" data-status="review"></div>
+            </div>
+            <div class="column" data-status="done">
+                <h2>✅ Done</h2>
+                <div class="cards" data-status="done"></div>
+            </div>
+        </main>
+    </div>
+
     <div id="modal" class="modal hidden">
         <div class="modal-content">
-            <h3 id="modalTitle">Add Card</h3>
-            <input type="text" id="cardTitle" placeholder="Card title">
+            <h3 id="modalTitle">Add Task</h3>
+            <input type="text" id="cardTitle" placeholder="Task title">
             <textarea id="cardDesc" placeholder="Description (optional)"></textarea>
+            <select id="cardCategory">
+                <option value="build">🔨 Build</option>
+                <option value="research">🔍 Research</option>
+                <option value="automation">⚙️ Automation</option>
+                <option value="learning">📚 Learning</option>
+                <option value="aurapath">🚀 Aurapath</option>
+                <option value="other">📌 Other</option>
+            </select>
             <div class="modal-actions">
                 <button id="saveCard">Save</button>
                 <button id="deleteCard" class="danger hidden">Delete</button>
