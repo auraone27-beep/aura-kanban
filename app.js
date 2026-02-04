@@ -132,10 +132,11 @@ const defaultCards = [
     },
     {
         id: '1738620000009',
-        title: 'Build Social Page',
-        desc: 'Post scheduler, content calendar, Twitter/LinkedIn integration.',
-        status: 'backlog',
-        category: 'aurapath'
+        title: '✅ Build Social Page',
+        desc: 'Post scheduler, content calendar, Twitter/LinkedIn/YouTube integration.',
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T19:05:00'
     },
     {
         id: '1738620000010',
