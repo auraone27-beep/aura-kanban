@@ -93,24 +93,27 @@ const defaultCards = [
     },
     {
         id: '1738620000004',
-        title: 'Build Clients Page',
+        title: '✅ Build Clients Page',
         desc: 'Client list, profiles, health scores, project tracking.',
-        status: 'todo',
-        category: 'aurapath'
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:55:00'
     },
     {
         id: '1738620000005',
-        title: 'Build Pipeline Page',
+        title: '✅ Build Pipeline Page',
         desc: 'Prospect tracking, stages, outreach sequences.',
-        status: 'todo',
-        category: 'aurapath'
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:55:00'
     },
     {
         id: '1738620000006',
-        title: 'Build Calendar Page',
+        title: '✅ Build Calendar Page',
         desc: 'Google Calendar integration for Brandon + Travis.',
-        status: 'todo',
-        category: 'aurapath'
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:58:00'
     },
     {
         id: '1738620000007',
@@ -121,10 +124,11 @@ const defaultCards = [
     },
     {
         id: '1738620000008',
-        title: 'Build Finance Page',
+        title: '✅ Build Finance Page',
         desc: 'Invoices, revenue tracking, expenses, P&L.',
-        status: 'todo',
-        category: 'aurapath'
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:56:00'
     },
     {
         id: '1738620000009',
@@ -135,10 +139,11 @@ const defaultCards = [
     },
     {
         id: '1738620000010',
-        title: 'Build Aura\'s Desk',
+        title: '✅ Build Aura\'s Desk',
         desc: 'Agent orchestration, briefings, activity log.',
-        status: 'backlog',
-        category: 'aurapath'
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:59:00'
     },
     {
         id: '1738620000011',
