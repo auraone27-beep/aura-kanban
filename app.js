@@ -66,6 +66,93 @@ const defaultCards = [
         status: 'backlog',
         category: 'other',
         completedAt: '2026-02-02T23:31:00'
+    },
+    // === AURAPATH COMMAND CENTER ===
+    {
+        id: '1738620000001',
+        title: '✅ Command Center: Project Setup',
+        desc: 'Next.js 15 + TypeScript + Tailwind + Supabase client. Dashboard layout with sidebar.',
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:48:00'
+    },
+    {
+        id: '1738620000002',
+        title: '✅ Command Center: Database Schema',
+        desc: 'Full schema: clients, projects, prospects, tasks, meetings, social, finance, aura ops.',
+        status: 'done',
+        category: 'aurapath',
+        completedAt: '2026-02-03T18:48:00'
+    },
+    {
+        id: '1738620000003',
+        title: 'Create Supabase Project',
+        desc: 'Set up new Supabase project for Command Center, run schema.sql.',
+        status: 'todo',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000004',
+        title: 'Build Clients Page',
+        desc: 'Client list, profiles, health scores, project tracking.',
+        status: 'todo',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000005',
+        title: 'Build Pipeline Page',
+        desc: 'Prospect tracking, stages, outreach sequences.',
+        status: 'todo',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000006',
+        title: 'Build Calendar Page',
+        desc: 'Google Calendar integration for Brandon + Travis.',
+        status: 'todo',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000007',
+        title: 'Integrate Fathom',
+        desc: 'Auto-import meeting notes and action items.',
+        status: 'backlog',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000008',
+        title: 'Build Finance Page',
+        desc: 'Invoices, revenue tracking, expenses, P&L.',
+        status: 'todo',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000009',
+        title: 'Build Social Page',
+        desc: 'Post scheduler, content calendar, Twitter/LinkedIn integration.',
+        status: 'backlog',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000010',
+        title: 'Build Aura\'s Desk',
+        desc: 'Agent orchestration, briefings, activity log.',
+        status: 'backlog',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000011',
+        title: 'Add First Client',
+        desc: 'Add current Aurapath client to Command Center.',
+        status: 'todo',
+        category: 'aurapath'
+    },
+    {
+        id: '1738620000012',
+        title: 'Deploy to Vercel',
+        desc: 'Production deployment of Command Center.',
+        status: 'backlog',
+        category: 'aurapath'
     }
 ];
 
@@ -74,10 +161,19 @@ const defaultActivity = [
     { text: 'Aura identity created', date: '2026-02-02T22:00:00' },
     { text: 'Gmail connected', date: '2026-02-02T22:51:00' },
     { text: 'Kanban v1 built', date: '2026-02-02T22:53:00' },
-    { text: 'Morning briefing scheduled', date: '2026-02-02T23:15:00' }
+    { text: 'Morning briefing scheduled', date: '2026-02-02T23:15:00' },
+    { text: 'Command Center initialized', date: '2026-02-03T18:48:00' }
 ];
 
-let cards = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null') || defaultCards;
+// Merge new default cards into existing localStorage (so Aura can add tasks)
+function mergeNewDefaults(existing, defaults) {
+    const existingIds = new Set(existing.map(c => c.id));
+    const newCards = defaults.filter(c => !existingIds.has(c.id));
+    return [...existing, ...newCards];
+}
+
+let storedCards = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+let cards = storedCards ? mergeNewDefaults(storedCards, defaultCards) : defaultCards;
 let activity = JSON.parse(localStorage.getItem(ACTIVITY_KEY) || 'null') || defaultActivity;
 let editingId = null;
 
